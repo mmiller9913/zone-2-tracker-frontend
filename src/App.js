@@ -72,9 +72,11 @@ const App = () => {
   const tallyWeeklyMinutes = async () => {
     console.log('Tallying weekly minutes...');
     let weeklyZone2Minutes = (await Axios.get(`${apiUrl}/api/get/weeklyzone2minutes/${currentAccount}`)).data[0];
+    let test = (await Axios.get(`${apiUrl}/api/get/weeklyzone2minutes/${currentAccount}`)).data;
+    console.log(test);
     if (weeklyZone2Minutes === null) {
       weeklyZone2Minutes = 0;
-    }
+    } 
     setWeeklyZone2Minutes(weeklyZone2Minutes);
     console.log(`Weekly zone 2 minutes set: ${weeklyZone2Minutes}`);
   }
