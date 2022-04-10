@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'; //import from the firebase authentication service 
 import Axios from 'axios';
+import { apiUrl } from "./App";
 
 const firebaseConfig = {
     apiKey: "AIzaSyA_8-8jmjsiHryfqPkCdQwrmB1WVLopgsw",
@@ -29,12 +30,12 @@ export const signInWithGoogle = () => {
 
             //check is user is in the databse, add them if not
             console.log('Checking if this is a new user...')
-            let userCheck = await Axios.get(`http://localhost:5000/api/get/users/${email}`);
+            let userCheck = await Axios.get(`${apiUrl}/api/get/users/${email}`);
             const user = userCheck.data;
             if (user.length < 1) {
                 //add user
                 console.log('New user, adding them to the database...');
-                await Axios.post('http://localhost:5000/api/adduser',
+                await Axios.post(`${apiUrl}/api/adduser`,
                     {
                         email: email,
                         display_name: name

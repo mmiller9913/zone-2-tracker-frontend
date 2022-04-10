@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactDom from "react-dom";
 
 //when deployed on heroku
-const apiUrl = 'https://zone-2-tracker.herokuapp.com';
+export const apiUrl = 'https://zone-2-tracker.herokuapp.com';
 //in dev
 // const apiUrl = 'http://localhost:5000';
 
