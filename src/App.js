@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactDom from "react-dom";
 
 //when deployed on heroku
-export const apiUrl = 'https://www.zone2cardio.com';
+export const apiUrl = 'https://zone-2-tracker.herokuapp.com';
 //in dev
 // export const apiUrl = 'http://localhost:5000';
 
@@ -72,8 +72,6 @@ const App = () => {
   const tallyWeeklyMinutes = async () => {
     console.log('Tallying weekly minutes...');
     let weeklyZone2Minutes = (await Axios.get(`${apiUrl}/api/get/weeklyzone2minutes/${currentAccount}`)).data[0];
-    let test = (await Axios.get(`${apiUrl}/api/get/weeklyzone2minutes/${currentAccount}`)).data;
-    console.log(test);
     if (weeklyZone2Minutes === null) {
       weeklyZone2Minutes = 0;
     } 
