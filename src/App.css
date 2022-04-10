@@ -1,0 +1,285 @@
+html {
+  /* background: linear-gradient(353deg, rgba(8,1,1,0) 0%, rgba(228,128,51,1) 100%);    font-family: Poppins, sans-serif;
+  background-repeat: no-repeat; */
+  height: 100%;
+}
+
+body {
+    /* background-color: #ff9667; */
+    background: linear-gradient(353deg, rgba(8,1,1,0) 0%, rgba(228,128,51,1) 100%);    font-family: Poppins, sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    /* for the above, see: https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css */
+}
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ***HEADER SECTION*** */
+.header { 
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 45px;
+}
+
+/* *** WEEKLY MINUTES LOGGED SECTION*** */
+.weekly-minutes-logged {
+  margin-top: 60px;
+}
+
+.number-of-zone-2-minutes-this-week {
+  color: black;
+}
+
+/* ***LOG MORE MINUTES SECTION*** */
+.log-minutes-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log-minutes-inner-container {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --arrow-size: 85px;
+}
+
+#arrow {
+  width: 0; 
+  height: 0; 
+  border-left: var(--arrow-size) solid transparent;
+  border-right: var(--arrow-size) solid transparent;
+}
+
+.arrow-up {
+  border-bottom:var(--arrow-size) solid white;
+}
+
+.arrow-down { 
+  border-top: var(--arrow-size)  solid white;
+}
+
+.minutes-to-log {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 90px;
+}
+
+.arrow-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  display: flex;
+  justify-content: center;
+}
+
+.log-minutes-button {
+  margin-top: 40px;
+}
+
+.login-with-google-btn, 
+.log-minutes-button, 
+.dropbtn,
+.modal-delete-button,
+.modal-sign-in-button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 9999px;
+  font-size: 1.2rem;
+  background-color: black;
+  text-transform: uppercase;
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+
+  /* google logo */
+  /* background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  /* background-color: white; */
+  /* background-repeat: no-repeat;
+  background-position: 12px 25px;  */ 
+}
+
+.log-minutes-button:hover,
+.login-with-google-btn:hover,
+.dropbtn:hover {
+  background-color: 	#303030;
+}
+
+/* ***SIGN OUT SECTION**** */
+/* drodown icon next to email */
+.dropdown-icon {
+  height: 7px;
+  width: 10px;
+  margin-left: 10px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  font-size: 15px;
+  text-transform: lowercase;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 10px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  width: 240px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content > div {
+  color: black;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content div:hover {
+  background-color: #ddd;
+
+}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display:block;
+}
+
+/* ***WEEKLY SESSIONS SECTION *** */
+
+.weekly-sessions-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.weekly-sessions-outer-container > h1{
+  align-self: flex-start;
+}
+
+#weekly-session-card {
+  display: flex;
+  width: 400px;
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.weekly-sessions-header {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  color: black
+}
+
+.weekly-session-minutes-delete-container {
+  display: flex;
+  align-items: center;
+}
+
+#weekly-session-delete {
+  margin-left: 10px;
+}
+
+#weekly-session-delete:hover {
+  cursor: pointer;
+}
+
+/* ***MODAL SECTION*** */
+#modal > .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container > .modal {
+  z-index: 1;
+  width: 450px;
+  height: 320px;
+  padding: 10px;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  animation: animate 0.3s;
+  text-align:center;
+}
+
+.modal > .x-button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 5px 11px;
+  background: crimson;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.modal-delete-button {
+  width: 220px;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!--google icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/facicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/facicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/facicon.ico" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <title>Zone 2 Tracker</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <div id="modal"></div>
+</body>
+
+<script>
+  //onclick event listener for closing of sign out menu
+  window.onclick = function (event) {
+    //if user clicks anywhere besides button with class of 'dropbtn' or span with class of 'email'...
+    if (!event.target.matches('.dropbtn') && !event.target.matches('.email')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+
+</html>
