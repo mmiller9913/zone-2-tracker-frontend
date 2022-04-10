@@ -10,7 +10,7 @@ import ReactDom from "react-dom";
 //when deployed on heroku
 export const apiUrl = 'https://zone-2-tracker.herokuapp.com';
 //in dev
-// const apiUrl = 'http://localhost:5000';
+// export const apiUrl = 'http://localhost:5000';
 
 const App = () => {
 
@@ -152,25 +152,37 @@ const App = () => {
   }
 
   const deleteSession = (idToDelete) => {
+    console.log(`Deleting session with the folowing id: ${idToDelete}...`)
     setDisplayDeleteSessionModal(false);
     Axios.post(`${apiUrl}/api/deletesession`,
       {
         account: currentAccount,
         id: idToDelete
       }
-    ).then(() => {
-      let updatedWeeklySessions = weeklySessions.filter(item => item.id !== parseInt(idToDelete));
-      setWeeklySessions(updatedWeeklySessions);
-      toast.success("Session Deleted!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      tallyWeeklyMinutes();
+    ).then((result) => {
+      if (result.statusText === 'OK') {
+        toast.success("Session Deleted!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        console.log(`Session with the folowing id has been deleted: ${idToDelete}`);
+        tallyWeeklyMinutes();
+      } else {
+        toast.error("Error deleting session", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
     })
   }
 
@@ -321,7 +333,7 @@ const App = () => {
               setDisplaySignInModal(false);
               setIsLoggingMinutes(true);
               await signInWithGoogle();
-              checkLocalStorageForEmail(); 
+              checkLocalStorageForEmail();
             }
             }>SIGN IN</button>
           </div>

@@ -50,6 +50,7 @@ export const signInWithGoogle = () => {
             }
             resolve('User is signed in');
         } catch (err) {
+            console.log(err);
             reject(err);
         }
     })
