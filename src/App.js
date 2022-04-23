@@ -270,7 +270,7 @@ const App = () => {
               Minutes
             </div>
           </div>
-          <div className='weekly-sessions-container'>
+          <div>
             {weeklySessions.map((item, i) => {
               return <div id='weekly-session-card' key={i} value={item.id}>
                 <div className='weekly-session-day'>

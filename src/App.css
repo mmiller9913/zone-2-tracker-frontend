@@ -305,5 +305,13 @@ body {
     margin-top: 30px;
     text-align: center;
   }
+
+  #weekly-session-card {
+    width: 80vw;
+  }
+
+  .weekly-sessions-header {
+    width: 80vw;
+  }
 }
 
