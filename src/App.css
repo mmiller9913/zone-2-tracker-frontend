@@ -6,7 +6,8 @@ html {
 
 body {
     /* background-color: #ff9667; */
-    background: linear-gradient(353deg, rgba(8,1,1,0) 0%, rgba(228,128,51,1) 100%);    font-family: Poppins, sans-serif;
+    background: linear-gradient(353deg, rgba(8,1,1,0) 0%, rgba(228,128,51,1) 100%); 
+    font-family: Poppins, sans-serif;
     background-repeat: no-repeat;
     background-attachment: fixed; 
     /* for the above, see: https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css */
@@ -283,3 +284,25 @@ body {
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 440px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    height: 19vh;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  .logo {
+    font-size: 35px;
+  }
+
+  .weekly-minutes-logged {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+

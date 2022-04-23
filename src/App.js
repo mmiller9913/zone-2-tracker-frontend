@@ -74,7 +74,7 @@ const App = () => {
     let weeklyZone2Minutes = (await Axios.get(`${apiUrl}/api/get/weeklyzone2minutes/${currentAccount}`)).data[0];
     if (weeklyZone2Minutes === null) {
       weeklyZone2Minutes = 0;
-    } 
+    }
     setWeeklyZone2Minutes(weeklyZone2Minutes);
     console.log(`Weekly zone 2 minutes set: ${weeklyZone2Minutes}`);
   }
