@@ -374,6 +374,10 @@ const App = () => {
     <div className='outer-container'>
       <div className='main-container'>
         <div className='header'>
+          {/* <div className='logo'>
+            <span>ZONE 2 CARDIO</span>
+            <span> TRACKER</span>
+          </div> */}
           <div className='logo'>ZONE 2 CARDIO TRACKER</div>
           {renderSignInOrSignOutButton()}
         </div>

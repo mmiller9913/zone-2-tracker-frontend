@@ -42,6 +42,8 @@ body {
 
 .logo {
   font-size: 45px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 /* *** WEEKLY MINUTES LOGGED SECTION*** */
